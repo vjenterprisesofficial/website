@@ -20,7 +20,13 @@ export default function Navbar() {
       <nav className="navbar container" aria-label="Primary navigation">
         <Link className="brand" to="/">
           <img className="brand-logo" src={`${baseUrl}vj-enterprises-logo.png`} width="50" height="50" alt="" />
-          <span>{company.name}</span>
+          <div className="brand-text">
+            <div className="brand-name">
+              <span>VJ ENTERPRISES</span>
+              <span>DIGITAL SOLUTIONS</span>
+            </div>
+            <span className="brand-tagline">Grow Digitally, Grow Confidently</span>
+          </div>
         </Link>
 
         <div className={`nav-panel ${open ? 'is-open' : ''}`}>
