@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">VJ Enterprises Digital Solutions logo</title>
+  <defs>
+    <linearGradient id="g" x1="16" y1="112" x2="112" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19d3ff"/>
+      <stop offset=".52" stop-color="#4477ff"/>
+      <stop offset="1" stop-color="#a85cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#071a33"/>
+  <path d="M26 34h18l18 47 18-47h18L70 99H54L26 34Z" fill="url(#g)"/>
+  <path d="M83 34h19v43c0 15-9 24-24 24-8 0-15-2-20-7l8-14c3 3 7 5 11 5 4 0 6-3 6-8V34Z" fill="#fff"/>
+</svg>
