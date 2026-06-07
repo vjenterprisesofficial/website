@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <title>Redirecting | VJ Enterprises Digital Solutions</title>
     <script>
-      const segmentCount = 1;
+      const segmentCount = 0;
       const locationPath = window.location.pathname
         .split('/')
         .slice(1 + segmentCount)
         .join('/');
-      const redirect = `${window.location.origin}/website/${locationPath ? `?/${locationPath}` : ''}${window.location.search}${window.location.hash}`;
+      const redirect = `${window.location.origin}/${locationPath ? `?/${locationPath}` : ''}${window.location.search}${window.location.hash}`;
       window.location.replace(redirect);
     </script>
   </head>
