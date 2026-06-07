@@ -19,7 +19,12 @@ import {
   Target,
   Users,
   Video,
-  WandSparkles
+  WandSparkles,
+  Briefcase,
+  BookOpen,
+  MapPin,
+  Clock,
+  DollarSign
 } from 'lucide-react';
 
 export const company = {
@@ -39,6 +44,7 @@ export const navLinks = [
   { label: 'Services', to: '/services' },
   { label: 'Portfolio', to: '/portfolio' },
   { label: 'Testimonials', to: '/testimonials' },
+  { label: 'Careers', to: '/careers' },
   { label: 'Contact', to: '/contact' }
 ];
 
@@ -264,3 +270,81 @@ export const statCards = [
 ];
 
 export const visualIcons = [WandSparkles, ShoppingBag, BadgeCheck, Film];
+
+export const jobs = [
+  {
+    title: 'Frontend Developer',
+    type: 'Full-time',
+    location: 'Bengaluru, India',
+    description: 'Build responsive, high-performance web applications using React and modern CSS. You\'ll work on client websites, dashboards, and web apps that shape business growth.',
+    requirements: ['3+ years React experience', 'Strong CSS and responsive design', 'Git and deployment workflows', 'SEO best practices understanding'],
+    benefits: ['Competitive salary', 'Health insurance', 'Learning budget', 'Flexible work hours']
+  },
+  {
+    title: 'SEO & Digital Marketing Specialist',
+    type: 'Full-time',
+    location: 'Bengaluru, India',
+    description: 'Drive organic growth and paid campaigns for our clients. Manage SEO audits, content strategy, Google Ads, Meta Ads, and analytics dashboards.',
+    requirements: ['2+ years SEO or SEM experience', 'Google Analytics and Search Console expertise', 'Campaign management skills', 'Data analysis and reporting'],
+    benefits: ['Competitive salary', 'Performance bonus', 'Learning budget', 'Remote-friendly']
+  },
+  {
+    title: 'UI/UX Designer',
+    type: 'Full-time',
+    location: 'Bengaluru, India',
+    description: 'Design websites, apps, and digital products from concept to delivery. Create wireframes, prototypes, and visual systems that balance business goals with user needs.',
+    requirements: ['2+ years UI/UX design', 'Figma proficiency', 'Web design best practices', 'Ability to present designs to clients'],
+    benefits: ['Competitive salary', 'Design tool subscriptions', 'Creative freedom', 'Collaborative team']
+  },
+  {
+    title: 'Backend Engineer',
+    type: 'Full-time',
+    location: 'Bengaluru, India',
+    description: 'Build scalable backend systems for web applications and services. Work with databases, APIs, and cloud infrastructure to power our digital solutions.',
+    requirements: ['3+ years backend development', 'Node.js or Python experience', 'REST API design', 'Database design and optimization'],
+    benefits: ['Competitive salary', 'Tech learning budget', 'Stock options', 'Flexible schedule']
+  }
+];
+
+export const internships = [
+  {
+    title: 'Web Development Intern',
+    duration: '3-6 months',
+    location: 'Bengaluru, India',
+    type: 'Remote-friendly',
+    description: 'Learn modern web development by building real projects. Work with React, CSS, and JavaScript in a mentored environment. Ideal for engineering students.',
+    requirements: ['Basic HTML, CSS, JavaScript knowledge', 'Currently pursuing BTech/Bachelor\'s', 'Willingness to learn', 'Communication skills'],
+    skills: ['React basics', 'Responsive design', 'Git workflow', 'Component development'],
+    stipend: '₹8,000 - ₹12,000/month'
+  },
+  {
+    title: 'Digital Marketing Intern',
+    duration: '3-6 months',
+    location: 'Bengaluru, India',
+    type: 'On-site',
+    description: 'Gain hands-on experience in SEO, social media, and paid advertising. Work on real client campaigns and learn marketing analytics.',
+    requirements: ['Marketing interest', 'Currently pursuing Bachelor\'s', 'Social media awareness', 'Analytical mindset'],
+    skills: ['SEO basics', 'Google Analytics', 'Social media marketing', 'Content calendar management'],
+    stipend: '₹6,000 - ₹10,000/month'
+  },
+  {
+    title: 'UI/UX Design Intern',
+    duration: '3-6 months',
+    location: 'Bengaluru, India',
+    type: 'Remote-friendly',
+    description: 'Create beautiful, user-friendly interfaces for web and mobile. Learn design thinking, wireframing, and prototyping in Figma.',
+    requirements: ['Design interest or coursework', 'Currently pursuing Bachelor\'s', 'Basic design software knowledge', 'Creative mindset'],
+    skills: ['Figma basics', 'Wireframing', 'Visual design', 'User research'],
+    stipend: '₹8,000 - ₹12,000/month'
+  },
+  {
+    title: 'Content Writing Intern',
+    duration: '3-6 months',
+    location: 'Bengaluru, India',
+    type: 'Remote',
+    description: 'Write engaging, SEO-optimized content for websites and blogs. Build portfolio pieces for tech, business, and creative niches.',
+    requirements: ['Strong English writing', 'Currently pursuing any Bachelor\'s', 'SEO awareness', 'Attention to detail'],
+    skills: ['Blog writing', 'SEO copywriting', 'Research skills', 'Social media captions'],
+    stipend: '₹5,000 - ₹8,000/month'
+  }
+];
