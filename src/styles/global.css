@@ -101,7 +101,7 @@ main {
   z-index: 100;
   min-height: var(--header-height);
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg-strong) 88%, transparent);
+  background: color-mix(in srgb, var(--bg-strong) 65%, transparent);
   backdrop-filter: blur(18px);
 }
 
@@ -128,10 +128,41 @@ main {
 }
 
 .brand {
-  gap: 10px;
+  gap: 12px;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.1;
   font-size: 0.92rem;
+}
+
+.brand-text {
+  display: grid;
+  gap: 2px;
+}
+
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 1.1;
+}
+
+.brand-name span {
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  text-transform: uppercase;
+  max-width: 140px;
+}
+
+.brand-tagline {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+  max-width: 140px;
+  line-height: 1.2;
 }
 
 .brand span {
@@ -1066,6 +1097,14 @@ h3 {
     pointer-events: auto;
   }
 
+  .brand-name span {
+    font-size: 0.65rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.55rem;
+  }
+
   .brand span {
     max-width: 150px;
     font-size: 0.8rem;
@@ -1109,5 +1148,188 @@ h3 {
 
   .detail-card {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Career Page Styles */
+.job-card,
+.internship-card {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.job-header,
+.internship-header {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+}
+
+.job-header h3,
+.internship-header h3 {
+  margin: 0 0 8px;
+  font-size: 1.28rem;
+}
+
+.job-meta,
+.internship-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.job-location {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.job-description,
+.internship-description {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.job-section,
+.internship-section {
+  display: grid;
+  gap: 10px;
+}
+
+.job-section h4,
+.internship-section h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 850;
+  color: var(--text);
+}
+
+.job-list,
+.requirement-list {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.job-list li,
+.requirement-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.job-list li svg,
+.requirement-list li svg {
+  color: var(--accent);
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.skill-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(228, 66, 45, 0.08);
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.internship-stipend {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: rgba(247, 191, 69, 0.12);
+  color: var(--text);
+  font-weight: 750;
+  font-size: 0.96rem;
+}
+
+.internship-stipend svg {
+  color: var(--accent-2);
+  flex: 0 0 auto;
+}
+
+.internship-tag {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(228, 66, 45, 0.12);
+  color: var(--accent);
+  font-size: 0.77rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.why-join-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.benefit-item {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.benefit-item h3 {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+  color: var(--accent);
+}
+
+.benefit-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 680px) {
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .why-join-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 920px) {
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .why-join-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

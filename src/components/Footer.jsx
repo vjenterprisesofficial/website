@@ -2,14 +2,22 @@ import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { company, navLinks, services, socialLinks } from '../assets/siteData.js';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-grid">
         <section className="footer-brand" aria-label="Company information">
           <Link className="brand" to="/">
-            <img className="brand-logo" src="/vj-enterprises-logo.png" width="50" height="50" alt="" />
-            <span>{company.name}</span>
+            <img className="brand-logo" src={`${baseUrl}vj-enterprises-logo.png`} width="50" height="50" alt="" />
+            <div className="brand-text">
+              <div className="brand-name">
+                <span>VJ ENTERPRISES</span>
+                <span>DIGITAL SOLUTIONS</span>
+              </div>
+              <span className="brand-tagline">Grow Digitally, Grow Confidently</span>
+            </div>
           </Link>
           <p>{company.tagline}</p>
           <div className="social-list">
