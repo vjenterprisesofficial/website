@@ -50,16 +50,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section alt">
-        <div className="container">
-          <SectionHeader eyebrow="Location" title="Google Map Placeholder" align="center" />
-          <div className="map-placeholder" role="img" aria-label="Google map placeholder for Bengaluru, Karnataka">
-            <MapPin size={42} />
-            <strong>Bengaluru, Karnataka, India</strong>
-            <span>Replace this placeholder with your Google Maps embed iframe before launch.</span>
-          </div>
-        </div>
-      </section>
+      
     </>
   );
 }

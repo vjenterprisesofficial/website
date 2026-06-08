@@ -30,11 +30,11 @@ import {
 export const company = {
   name: 'VJ Enterprises Digital Solutions',
   shortName: 'VJ Enterprises',
-  email: 'hello@vjenterprisesdigital.com',
-  phone: '+91 98765 43210',
-  whatsapp: '919876543210',
-  address: 'Bengaluru, Karnataka, India',
-  domain: 'https://www.vjenterprisesdigital.com',
+  email: 'contact@vjenterprisesdigitalsolutions.com',
+  phone: '+91 7447411269',
+  whatsapp: '917447411269',
+  address: 'Kanpur, Uttar Pradesh, India',
+  domain: 'https://www.vjenterprisesdigitalsolutions.com',
   tagline: 'IT services and digital marketing built for measurable growth.'
 };
 
@@ -257,9 +257,9 @@ export const values = [
 ];
 
 export const socialLinks = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/' },
-  { label: 'Facebook', href: 'https://www.facebook.com/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/vjenterpri1' },
+  { label: 'Instagram', href: 'https://www.instagram.com/vjenterpri1' },
+  { label: 'Facebook', href: 'https://www.facebook.com/vjenterpri1' },
   { label: 'YouTube', href: 'https://www.youtube.com/' }
 ];
 

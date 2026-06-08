@@ -10,9 +10,9 @@ export const organizationSchema = {
   telephone: company.phone,
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Bengaluru',
-    addressRegion: 'Karnataka',
-    addressCountry: 'IN'
+    addressLocality: 'Kanpur',
+    addressRegion: 'Uttar Pradesh',
+    addressCountry: 'India'
   },
   sameAs: ['https://www.linkedin.com/', 'https://www.instagram.com/', 'https://www.facebook.com/'],
   areaServed: ['India', 'Global'],
