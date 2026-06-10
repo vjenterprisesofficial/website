@@ -50,9 +50,9 @@ export default function Footer() {
         <section>
           <h2>Contact</h2>
           <ul className="footer-list contact-list">
-            <li><Mail size={17} /><a href={`mailto:${company.email}`}>{company.email}</a></li>
-            <li><Phone size={17} /><a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a></li>
-            <li><MapPin size={17} /><span>{company.address}</span></li>
+            <li><Mail size={17} />&nbsp;<a href={`mailto:${company.email}`}>{company.email}</a></li>
+            <li><Phone size={17} />&nbsp;<a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a></li>
+            <li><MapPin size={17} />&nbsp;<span>{company.address}</span></li>
           </ul>
         </section>
       </div>
