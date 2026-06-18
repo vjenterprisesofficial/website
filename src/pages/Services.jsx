@@ -49,32 +49,6 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="section alt">
-        <div className="container">
-          <SectionHeader
-            eyebrow="Service Detail Sections"
-            title="Additional growth and technology capabilities"
-            align="center"
-          />
-          <div className="detail-grid">
-            {services.map((service) => {
-              const Icon = service.icon;
-              return (
-                <article key={service.slug} id={service.slug} className="detail-card">
-                  <Icon size={24} />
-                  <div>
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                    <ul className="benefit-list">
-                      {service.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}
-                    </ul>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
       <FAQ />
       <CTA />
     </>
