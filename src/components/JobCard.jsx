@@ -115,11 +115,11 @@ export default function JobCard({ data, cardType }) {
                   ))}
                 </ul>
 
-                {data.stipend && (
+                {/* {data.stipend && (
                   <div className="stipend-box">
                     <strong>Stipend:</strong> {data.stipend}
                   </div>
-                )}
+                )} */}
               </div>
             </>
           )}
