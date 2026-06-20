@@ -200,10 +200,6 @@ main {
   gap: 8px;
 }
 
-.menu-btn {
-  display: none;
-}
-
 .btn,
 .icon-btn,
 .filter-tabs button {
@@ -256,6 +252,10 @@ main {
   color: var(--text);
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.75);
+}
+
+.menu-btn {
+  display: none;
 }
 
 .hero {
