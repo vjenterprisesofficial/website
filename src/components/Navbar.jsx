@@ -5,7 +5,7 @@ import { company, navLinks } from '../assets/siteData.js';
 
 const baseUrl = import.meta.env.BASE_URL;
 
-export default function Navbar() {
+export default function Navbar({ onGetProposalClick }) {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
@@ -35,7 +35,13 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <Link className="btn btn-small btn-primary" to="/contact">Get Proposal</Link>
+          <button 
+            type="button" 
+            className="btn btn-small btn-primary" 
+            onClick={onGetProposalClick}
+          >
+            Get Proposal
+          </button>
         </div>
 
         <div className="nav-actions">

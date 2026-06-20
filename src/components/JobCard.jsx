@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { MapPin, Clock, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
 
-export default function JobCard({ data, cardType }) {
+export default function JobCard({ data, cardType, onApply }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -44,9 +43,13 @@ export default function JobCard({ data, cardType }) {
         </div>
 
         <div className="job-actions">
-          <Link className="btn btn-primary" to="/contact">
+          <button 
+            type="button" 
+            className="btn btn-primary"
+            onClick={() => onApply(data)}
+          >
             Apply Now
-          </Link>
+          </button>
 
           <button
             type="button"
