@@ -43,7 +43,6 @@ export const navLinks = [
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Portfolio", to: "/portfolio" },
-  { label: "Testimonials", to: "/testimonials" },
   { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
 ];
@@ -244,55 +243,60 @@ export const portfolio = [
 
 export const testimonials = [
   {
-    name: "Ananya Rao",
-    role: "Founder, Urban Wellness Studio",
+    name: "Babul Verma",
+    role: "General Secretary, Nunchaku Association of India",
     rating: 5,
     quote:
-      "VJ Enterprises gave our brand a cleaner website and a steady lead engine. The team was practical, fast, and very clear about priorities.",
+      "VJ Enterprises did an exceptional job building our official association website and managing our social media. The digital portal has greatly boosted our national reach and registrations.",
   },
   {
-    name: "Rahul Menon",
-    role: "Director, FinEdge Advisors",
+    name: "R P Sharma",
+    role: "Presdient, Karate Bharat",
     rating: 5,
     quote:
-      "Their SEO and content recommendations helped us rank for searches that actually matter to our business. Reporting was simple and useful.",
+      "The custom sports registry database and web portal developed by their team has streamlined our entire athlete registration process and tournament records. The system is extremely fast and robust.",
   },
   {
-    name: "Meera Shah",
-    role: "Marketing Lead, Nova Retail",
+    name: "Rohit",
+    role: "Director, Swami Connector India Pvt Ltd",
     rating: 5,
     quote:
-      "The ad creatives, landing pages, and tracking setup finally worked together. We saw better quality enquiries within the first campaign cycle.",
+      "Their web development and technical product consulting services have been crucial for our electrical connector distribution platform. They built a highly responsive site that elegantly showcases our catalog.",
   },
   {
-    name: "Arjun Patel",
-    role: "Operations Head, BuildGrid",
+    name: "Ali Shaikh",
+    role: "Founder, Sincere Advisors",
     rating: 5,
     quote:
-      "They understood our web app requirements quickly and delivered an interface our team could use without training sessions.",
+      "The Facebook Ads campaign and optimized lead generation funnel they set up delivered high-quality wealth management client enquiries, reducing our cost per lead significantly.",
   },
 ];
 
 export const faqs = [
   {
-    question: "Do you work with startups and established businesses?",
+    question: "What are the key benefits of partnering with VJ Enterprises?",
     answer:
-      "Yes. We support new brands that need a strong first launch and established companies that want to modernize websites, campaigns, and internal tools.",
+      "Our mission is to empower businesses to leverage technology for growth and efficiency. We provide comprehensive digital solutions, from website development to online marketing, enabling you to focus on your core business while we handle the rest. Our team is dedicated to streamlining your operations and maximizing your digital potential.",
   },
   {
-    question: "Can you manage both website development and marketing?",
+    question: "How do you ensure that your team is the right fit for my company's unique needs?",
     answer:
-      "Yes. Our work often combines websites, landing pages, SEO, social media, ads, creative assets, and performance reporting.",
+      "Our team of tech-savvy developers and creative marketers brings a unique blend of expertise. We carefully select team members based on your specific needs, ensuring a personalized and effective approach to crafting digital solutions that fit your goals.",
   },
   {
-    question: "How quickly can a project start?",
+    question: "Do you offer integration options for businesses that already use specific software?",
     answer:
-      "Most projects begin with a discovery call, a short scope document, and a milestone plan. Smaller sites can start quickly once content and goals are clear.",
+      "Yes, we provide custom solutions designed to integrate effortlessly with your existing systems, ensuring minimal disruption and maximum efficiency. We tailor our modules to your specific needs, providing a seamless experience for both you and your customers.",
   },
   {
-    question: "Does the contact form need a backend?",
+    question: "What type of technical support do you provide post-implementation?",
     answer:
-      "No. This site is configured for Web3Forms, so submissions can be sent to email without a custom backend or database.",
+      "Our commitment to post-implementation support is unwavering. Our dedicated team is always available to troubleshoot issues, provide system updates, and ensure optimal performance. We offer flexible engagement models to meet your specific needs.",
+  },
+  {
+    question: "How do you ensure your software solutions are scalable as the business grows?",
+    answer:
+      "We prioritize long-term sustainability in our solutions. We design systems and websites with flexible data handling, modern technologies, and exceptional coding standards. This robust foundation ensures seamless scalability and enduring value as your business grows.",
   },
 ];
 
@@ -319,24 +323,19 @@ export const processSteps = [
 
 export const team = [
   {
-    name: "Vijay Kumar",
-    role: "Digital Strategy Lead",
+    name: "Om Prakash",
+    role: "Founder",
     specialty: "Growth planning, client success, and solution architecture",
   },
   {
-    name: "Priya Nair",
-    role: "Creative Director",
+    name: "Shweta Kushwaha",
+    role: "CEO, Creative Director",
     specialty: "Brand identity, campaign visuals, and UI direction",
   },
   {
-    name: "Karan Iyer",
-    role: "Frontend Engineer",
+    name: "Vijay Kushwaha",
+    role: "Website Specialist",
     specialty: "React websites, web apps, performance, and accessibility",
-  },
-  {
-    name: "Sneha Gupta",
-    role: "Marketing Specialist",
-    specialty: "SEO, paid ads, analytics, and social content systems",
   },
 ];
 
