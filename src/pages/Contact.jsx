@@ -23,7 +23,7 @@ export default function Contact() {
       <section className="section">
         <div className="container contact-grid">
           <div>
-            <SectionHeader eyebrow="Lead Form" title="Request a project discussion" description="The form is configured for Web3Forms and does not require a backend." />
+            <SectionHeader title="Request a project discussion" />
             <ContactForm />
           </div>
 
@@ -50,7 +50,7 @@ export default function Contact() {
         </div>
       </section>
 
-      
+
     </>
   );
 }
