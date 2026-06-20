@@ -1,13 +1,22 @@
 export default function PortfolioCard({ project }) {
   return (
     <article className="portfolio-card reveal">
-      <div className="project-visual" style={{ '--project-accent': project.accent }} aria-label={`${project.title} project image placeholder`}>
+      <div className="project-visual" style={{ '--project-accent': project.accent }}>
         <div className="browser-bar"><span /><span /><span /></div>
-        <div className="project-lines">
-          <span />
-          <span />
-          <span />
-        </div>
+        {project.image ? (
+          <img 
+            className="project-screenshot" 
+            src={project.image} 
+            alt={`${project.title} screenshot`} 
+            loading="lazy" 
+          />
+        ) : (
+          <div className="project-lines">
+            <span />
+            <span />
+            <span />
+          </div>
+        )}
       </div>
       <div className="portfolio-content">
         <span className="tag">{project.category}</span>

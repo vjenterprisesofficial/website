@@ -196,52 +196,49 @@ export const whyChooseUs = [
 
 export const portfolio = [
   {
-    title: "SaaS Landing Experience",
+    title: "Nunchaku Association of India",
     category: "Websites",
     description:
-      "A high-converting landing page system for a B2B software startup with analytics-ready sections.",
-    tech: ["React", "Vite", "SEO", "Analytics"],
+      "Official national website development and social media management program, enhancing digital visibility and online registries for martial arts.",
+    tech: ["Wordpress", "Custom PHP"],
     accent: "#e4422d",
+    image: "/portfolio/nunchaku-india.png",
   },
   {
-    title: "Local SEO Growth Program",
-    category: "SEO",
+    title: "Karate Bharat Portal",
+    category: "Websites",
     description:
-      "Technical fixes, content clusters, and Google Business Profile optimization for a service brand.",
-    tech: ["Technical SEO", "Content", "Local Search"],
+      "Custom national sports portal and registry database application designed to manage athlete memberships, event registrations, and belt ranks.",
+    tech: ["Wordpress"],
     accent: "#f7bf45",
+    image: "/portfolio/karate-bharat.png",
   },
   {
-    title: "D2C Meta Ads Funnel",
+    title: "Swami Connector",
+    category: "Websites",
+    description:
+      "Website development and technical product consulting for a leading supplier and distributor of electrical connectors, wire harness components, and automotive terminal solutions in India.",
+    tech: ["Wordpress", "Technical Consulting"],
+    accent: "#101a18",
+    image: "/portfolio/swami-connector.png",
+  },
+  {
+    title: "Sincere Advisors Campaign",
     category: "Marketing",
     description:
-      "Creative testing, audience segmentation, retargeting, and weekly reporting for ecommerce leads.",
-    tech: ["Meta Ads", "Creative Testing", "CRO"],
-    accent: "#101a18",
-  },
-  {
-    title: "Corporate Brand Refresh",
-    category: "Branding",
-    description:
-      "A sharper identity system with logo refinement, color standards, social templates, and pitch assets.",
-    tech: ["Brand Design", "Social Assets", "Decks"],
-    accent: "#f59e0b",
-  },
-  {
-    title: "Admin Workflow App",
-    category: "Apps",
-    description:
-      "A responsive internal web application for tracking leads, service requests, and operational status.",
-    tech: ["React", "Dashboards", "UX Systems"],
+      "Strategic Facebook Ads campaign and lead generation funnels, successfully acquiring qualified wealth advisor client enquiries.",
+    tech: ["Facebook Ads", "Meta Pixel", "Lead Generation", "Copywriting"],
     accent: "#df6f32",
+    image: "/portfolio/sincere-advisors.png",
   },
   {
-    title: "Video Campaign Kit",
-    category: "Video",
+    title: "Nunchaku Haryana Website",
+    category: "Websites",
     description:
-      "A set of short-form edits, ad variants, subtitles, and platform-specific exports for launch week.",
-    tech: ["Video Editing", "Motion", "Reels"],
-    accent: "#ef4444",
+      "State-level sports organization website highlighting regional tournament schedules, regional rules, and student registries.",
+    tech: ["Wordpress"],
+    accent: "#10b981",
+    image: "/portfolio/nunchaku-haryana.png",
   },
 ];
 
