@@ -121,7 +121,7 @@ export default function ProposalModal({ isOpen, onClose }) {
               <p>Tell us about your digital needs and project timeline.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="modal-form">
+            <form id="gtm-lead-form" onSubmit={handleSubmit} className="modal-form">
               {error && (
                 <div className="modal-error-alert">
                   <AlertCircle size={18} />

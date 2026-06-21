@@ -132,7 +132,7 @@ export default function ApplyModal({ isOpen, onClose, jobData }) {
               <p>Please fill out the form below to submit your application.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="modal-form">
+            <form id="gtm-lead-form" onSubmit={handleSubmit} className="modal-form">
               {error && (
                 <div className="modal-error-alert">
                   <AlertCircle size={18} />

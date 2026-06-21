@@ -43,6 +43,7 @@ export default function ContactForm({ compact = false }) {
 
   return (
     <form
+      id="gtm-lead-form"
       className={`contact-form ${compact ? 'compact' : ''}`}
       onSubmit={handleSubmit}
     >
