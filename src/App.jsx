@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -9,6 +9,7 @@ import Contact from './pages/Contact.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import TermsConditions from './pages/TermsConditions.jsx';
 import NotFound from './pages/NotFound.jsx';
+import SummerInternship from './pages/SummerInternship.jsx';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="/summer-internship" element={<SummerInternship />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
