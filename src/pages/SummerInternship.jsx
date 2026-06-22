@@ -19,12 +19,11 @@ import {
   X
 } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
-import { submitContactForm } from '../api/contactService.js';
 import '../styles/summer-internship.css';
 
 // Google Apps Script Web App URL for storing internship registrations in a Google Sheet
 // Change this URL if you want to store registrations in a different Google Sheet
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlnmHeOrGTaiaQHJ6Za73n77d5ytzmqFPVeZ0WiEMlvG0nJSdV7LScUyQCJufYG1rC/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6XtyBYM08xGsGnOBTI_LeCglfngsL51-A0fJxc1myhdBe13Boo4y289d_MTQNShNS/exec';
 
 export default function SummerInternship() {
   const [activeTrackIndex, setActiveTrackIndex] = useState(0);
@@ -215,19 +214,17 @@ export default function SummerInternship() {
 
   const submitToGoogleScript = async (formData) => {
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'text/plain;charset=utf-8'
         },
         body: JSON.stringify(formData)
       });
-      const text = await response.text();
-      try {
-        return JSON.parse(text);
-      } catch {
-        return { success: true, message: 'Form submitted successfully' };
-      }
+      // With 'no-cors', the response is opaque (status 0).
+      // If it doesn't throw a network exception, the data was transmitted successfully.
+      return { success: true, message: 'Form submitted successfully' };
     } catch (error) {
       console.error('Submit Error:', error);
       return { success: false, error: error.message };
@@ -407,7 +404,7 @@ export default function SummerInternship() {
       {/* Why Choose VJ Enterprises */}
       <section className="section alt">
         <div className="container">
-          <h2 className="internship-section-title">Why Choose VJ Enterprises?</h2>
+          <h2 className="internship-section-title">Why Choose VJ Enterprises Digital Solutions?</h2>
           <p className="internship-section-subtitle">
             Train with an active digital agency, not a coaching institute. Get real experience, host real projects, and build verifiable skills.
           </p>
@@ -452,7 +449,7 @@ export default function SummerInternship() {
           <p className="internship-section-subtitle">
             Select the track that matches your career goals. Learn from Industry Mentors, work on real-world tracks, and complete a standout final portfolio piece.
           </p>
-          <div className="internship-tracks-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+          <div className="internship-tracks-grid">
             {domains.map((domain, index) => (
               <div key={index} className="internship-track-card">
                 <div className="internship-track-header">
@@ -505,12 +502,12 @@ export default function SummerInternship() {
 
             <div className="internship-timeline-vertical" key={activeTrackIndex}>
               {curriculumTracks[activeTrackIndex].phases.map((phase, idx) => (
-                <div key={idx} className="internship-timeline-item" style={{ display: 'flex', gap: '24px', marginBottom: idx === 3 ? '0' : '40px', position: 'relative' }}>
+                <div key={idx} className="internship-timeline-item">
                   {idx !== 3 && (
-                    <div style={{ position: 'absolute', left: '25px', top: '56px', bottom: '-48px', width: '2px', background: 'var(--border-color)' }}></div>
+                    <div className="internship-timeline-connector"></div>
                   )}
 
-                  <div className="internship-step-number-box" style={{ width: '50px', height: '50px', borderRadius: '12px', fontSize: '1.2rem', flexShrink: 0 }}>
+                  <div className="internship-step-number-box">
                     0{idx + 1}
                   </div>
 
@@ -671,7 +668,7 @@ export default function SummerInternship() {
               </button>
 
               {modalResponseMsg && (
-                <div className={`internship-form-response ${modalResponseType}`} style={{ marginTop: '15px', color: modalResponseType === 'success' ? 'green' : 'red' }}>
+                <div className={`internship-form-response ${modalResponseType}`} style={{ marginTop: '15px' }}>
                   {modalResponseMsg}
                 </div>
               )}

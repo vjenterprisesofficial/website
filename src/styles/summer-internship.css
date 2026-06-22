@@ -94,6 +94,7 @@
 .internship-hero h1 span {
   background: linear-gradient(135deg, #e4422d 30%, #f7bf45 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -156,7 +157,7 @@
 /* Strategic Grid Cards (Who Can Join, Scope, Value adds) */
 .internship-grid-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -249,7 +250,7 @@
 /* Why Choose Us Cards */
 .internship-why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -285,7 +286,7 @@
 /* Technology Tracks Styles */
 .internship-tracks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -435,19 +436,39 @@
   }
 }
 
+.internship-timeline-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.internship-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.internship-timeline-connector {
+  position: absolute;
+  left: 25px;
+  top: 56px;
+  bottom: -48px;
+  width: 2px;
+  background: var(--border-color);
+}
+
 .internship-step-number-box {
   background: rgba(247, 191, 69, 0.15);
   color: var(--primary-color);
   border: 2px solid var(--secondary-color);
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   flex-shrink: 0;
 }
 
@@ -546,7 +567,7 @@
 /* Pricing Section Cards */
 .internship-pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   align-items: stretch;
 }
@@ -859,6 +880,130 @@
 
   .internship-pricing-card.featured:hover {
     transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 576px) {
+  .internship-modal-content {
+    padding: 24px 16px;
+    border-radius: 16px;
+    width: 95%;
+  }
+
+  .internship-modal-close {
+    top: 16px;
+    right: 16px;
+  }
+
+  .internship-modal-content h2.modal-title {
+    font-size: 1.4rem;
+  }
+
+  .internship-modal-content p.modal-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .internship-modal-form .internship-form-group {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .internship-page .container {
+    padding: 0 16px;
+  }
+
+  .internship-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .internship-hero p {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .internship-badge-container {
+    gap: 10px;
+  }
+
+  .internship-hero-badge {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .internship-card {
+    padding: 24px 20px;
+  }
+
+  .internship-why-card {
+    padding: 24px 20px;
+  }
+
+  .internship-track-header,
+  .internship-track-body {
+    padding: 20px;
+  }
+
+  .internship-syllabus-section {
+    padding: 24px 16px;
+    margin-top: 15px;
+  }
+
+  .internship-tab-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .internship-tabs-nav {
+    margin-bottom: 25px;
+  }
+
+  .internship-timeline-item {
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  .internship-timeline-connector {
+    left: 20px;
+    top: 46px;
+    bottom: -36px;
+  }
+
+  .internship-step-number-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+  }
+
+  .internship-step-details h4 {
+    font-size: 1.15rem;
+  }
+
+  .internship-step-details p {
+    font-size: 0.95rem;
+  }
+
+  .internship-pricing-card {
+    padding: 24px 20px;
+  }
+
+  .internship-pricing-price {
+    font-size: 2.2rem;
+  }
+
+  .internship-enroll-section {
+    padding: 24px 16px;
+  }
+
+  .internship-enroll-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .internship-enroll-form {
+    padding: 20px 16px;
   }
 }
 
