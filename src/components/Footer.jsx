@@ -33,6 +33,7 @@ export default function Footer() {
             {navLinks.map((link) => (
               <li key={link.to}><Link to={link.to}>{link.label}</Link></li>
             ))}
+            <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
           </ul>
