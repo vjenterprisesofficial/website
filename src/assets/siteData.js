@@ -34,7 +34,7 @@ export const company = {
   phone: "+91 7447411269",
   whatsapp: "917447411269",
   address: "Kanpur, Uttar Pradesh, India",
-  domain: "https://www.vjenterprisesdigitalsolutions.com",
+  domain: "https://vjenterprisesdigitalsolutions.com",
   tagline: "IT services and digital marketing built for measurable growth.",
 };
 

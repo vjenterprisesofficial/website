@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const DIST_DIR = path.resolve(__dirname, '../dist');
 const BASE_HTML_PATH = path.join(DIST_DIR, 'index.html');
-const DOMAIN = 'https://www.vjenterprisesdigitalsolutions.com';
+const DOMAIN = 'https://vjenterprisesdigitalsolutions.com';
 
 // Verify build exists
 if (!fs.existsSync(BASE_HTML_PATH)) {
@@ -20,6 +20,11 @@ const baseHtml = fs.readFileSync(BASE_HTML_PATH, 'utf-8');
 
 // Define static routes and their SEO data
 const staticRoutes = [
+  {
+    path: '',
+    title: 'VJ Enterprises Digital Solutions | IT Services & Digital Marketing Agency',
+    description: 'VJ Enterprises Digital Solutions builds premium websites, web applications, SEO, ads, social media, branding, video editing, and technical consulting solutions.'
+  },
   {
     path: 'about',
     title: 'About Us | VJ Enterprises Digital Solutions',
@@ -70,7 +75,7 @@ const staticRoutes = [
 // Helper to inject SEO tags into HTML template
 function generateSeoHtml(title, description, routePath, options = {}) {
   let html = baseHtml;
-  const canonicalUrl = `${DOMAIN}/${routePath}`;
+  const canonicalUrl = routePath === '' ? `${DOMAIN}/` : `${DOMAIN}/${routePath}/`;
   const imageUrl = options.image 
     ? (options.image.startsWith('http') ? options.image : `${DOMAIN}${options.image}`)
     : `${DOMAIN}/vj-enterprises-logo.png`;
@@ -167,7 +172,7 @@ for (const post of blogPosts) {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `${DOMAIN}/${routePath}`
+      "@id": `${DOMAIN}/${routePath}/`
     }
   };
 
@@ -185,9 +190,14 @@ for (const post of blogPosts) {
 // Update sitemap.xml
 console.log('Generating dynamic sitemap.xml...');
 let sitemapUrls = [
-  { loc: `${DOMAIN}/`, priority: '1.0' },
-  ...staticRoutes.map(r => ({ loc: `${DOMAIN}/${r.path}`, priority: r.path === 'services' ? '0.9' : '0.8' })),
-  ...blogPosts.map(p => ({ loc: `${DOMAIN}/blog/${p.slug}`, priority: '0.8' }))
+  ...staticRoutes.map(r => ({
+    loc: r.path === '' ? `${DOMAIN}/` : `${DOMAIN}/${r.path}/`,
+    priority: r.path === '' ? '1.0' : (r.path === 'services' ? '0.9' : '0.8')
+  })),
+  ...blogPosts.map(p => ({
+    loc: `${DOMAIN}/blog/${p.slug}/`,
+    priority: '0.8'
+  }))
 ];
 
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
