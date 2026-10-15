@@ -150,16 +150,16 @@ main {
 .navbar {
   min-height: var(--header-height);
   justify-content: space-between;
-  gap: 16px;
-  flex-wrap: nowrap;
+  gap: 14px;
+  flex-wrap: nowrap !important;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -167,48 +167,60 @@ main {
 .brand-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   white-space: nowrap;
 }
 
 .brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+
+.brand-name span {
   font-weight: 900;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   letter-spacing: 0.5px;
   color: var(--text);
   text-transform: uppercase;
   white-space: nowrap;
-  line-height: 1.2;
+  line-height: 1.12;
 }
 
 .brand-tagline {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.3px;
   text-transform: capitalize;
   white-space: nowrap;
   line-height: 1.2;
+  margin-top: 1px;
 }
 
 .brand-logo {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   flex: 0 0 auto;
   border-radius: 50%;
   object-fit: contain;
 }
 
 .nav-panel {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap !important;
   gap: 6px;
+  white-space: nowrap;
 }
 
 .nav-link {
-  padding: 9px 11px;
+  padding: 8px 10px;
   border-radius: var(--radius);
   color: var(--muted);
   font-weight: 650;
-  font-size: 0.92rem;
+  font-size: 0.89rem;
+  white-space: nowrap !important;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
