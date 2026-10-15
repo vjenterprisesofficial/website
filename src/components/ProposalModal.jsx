@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { X, CheckCircle2, AlertCircle, Briefcase } from 'lucide-react';
 import { services } from '../assets/siteData.js';
+import { products } from '../assets/productsData.js';
 import { submitContactForm } from '../api/contactService.js';
+import { trackLeadGenerated } from '../utils/analytics.js';
 
 export default function ProposalModal({ isOpen, onClose }) {
   const [name, setName] = useState('');
@@ -78,6 +80,7 @@ export default function ProposalModal({ isOpen, onClose }) {
 
     if (result.success) {
       setSuccess(true);
+      trackLeadGenerated('proposal_modal', service);
     } else {
       setError(result.error || 'Unable to submit your proposal request. Please try again.');
     }
@@ -178,13 +181,22 @@ export default function ProposalModal({ isOpen, onClose }) {
                     style={{ paddingLeft: '38px' }}
                   >
                     <option value="" disabled>
-                      Select a service
+                      Select a service or product
                     </option>
-                    {services.map((srv) => (
-                      <option key={srv.slug} value={srv.title}>
-                        {srv.title}
-                      </option>
-                    ))}
+                    <optgroup label="Software Products">
+                      {products.map((prod) => (
+                        <option key={prod.id} value={`Product: ${prod.name}`}>
+                          {prod.name} (Business Billing & POS)
+                        </option>
+                      ))}
+                    </optgroup>
+                    <optgroup label="Agency Services">
+                      {services.map((srv) => (
+                        <option key={srv.slug} value={srv.title}>
+                          {srv.title}
+                        </option>
+                      ))}
+                    </optgroup>
                   </select>
                 </div>
               </div>

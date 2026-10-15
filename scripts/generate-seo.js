@@ -36,6 +36,16 @@ const staticRoutes = [
     description: 'Explore website development, SEO, digital marketing, social media marketing, Google Ads, Meta Ads, video editing, branding, and consulting services.'
   },
   {
+    path: 'products',
+    title: 'Products | VJ Enterprises Digital Solutions',
+    description: 'Discover practical digital products by VJ Enterprises Digital Solutions, including FASTBILLO smart billing and business management platform.'
+  },
+  {
+    path: 'products/fastbillo',
+    title: 'FASTBILLO — Smart Billing & POS Platform | VJ Enterprises Digital Solutions',
+    description: 'FASTBILLO is a business billing, POS, and everyday management platform designed to help retail and merchant businesses simplify operations.'
+  },
+  {
     path: 'portfolio',
     title: 'Portfolio | VJ Enterprises Digital Solutions',
     description: 'View portfolio examples across website development, web applications, SEO, digital marketing, branding, and video editing.'

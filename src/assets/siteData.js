@@ -40,11 +40,20 @@ export const company = {
 
 export const navLinks = [
   { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
+  { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
+  { 
+    label: "Products", 
+    to: "/products",
+    badge: "New",
+    subLinks: [
+      { label: "All Products", to: "/products", description: "Explore all digital software" },
+      { label: "FASTBILLO", to: "/products/fastbillo", description: "Smart Billing & POS Platform" }
+    ]
+  },
   { label: "Portfolio", to: "/portfolio" },
   { label: "Careers", to: "/careers" },
-  { label: "Contact", to: "/contact" },
+  { label: "Contact Us", to: "/contact" },
 ];
 
 export const services = [

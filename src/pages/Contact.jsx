@@ -3,6 +3,7 @@ import SEO from '../components/SEO.jsx';
 import ContactForm from '../components/ContactForm.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 import { company } from '../assets/siteData.js';
+import { trackContactClick, trackWhatsAppClick } from '../utils/analytics.js';
 
 export default function Contact() {
   return (
@@ -16,7 +17,7 @@ export default function Contact() {
         <div className="container narrow">
           <p className="eyebrow">Contact Us</p>
           <h1>Let us understand your goals and recommend the right digital next step.</h1>
-          <p>Send an enquiry, call, email, or start a WhatsApp conversation.</p>
+          <p>Send an enquiry, call, email, or start a WhatsApp conversation with our engineering team.</p>
         </div>
       </section>
 
@@ -31,26 +32,40 @@ export default function Contact() {
             <article>
               <Mail size={22} />
               <h3>Email</h3>
-              <a href={`mailto:${company.email}`}>{company.email}</a>
+              <a 
+                href={`mailto:${company.email}`}
+                onClick={() => trackContactClick('email', 'contact_page')}
+              >
+                {company.email}
+              </a>
             </article>
             <article>
               <Phone size={22} />
               <h3>Phone</h3>
-              <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a>
+              <a 
+                href={`tel:${company.phone.replace(/\s/g, '')}`}
+                onClick={() => trackContactClick('phone', 'contact_page')}
+              >
+                {company.phone}
+              </a>
             </article>
             <article>
               <MapPin size={22} />
               <h3>Address</h3>
               <p>{company.address}</p>
             </article>
-            <a className="btn btn-primary" href={`https://wa.me/${company.whatsapp}`} target="_blank" rel="noreferrer">
+            <a 
+              className="btn btn-primary" 
+              href={`https://wa.me/${company.whatsapp}`} 
+              target="_blank" 
+              rel="noreferrer"
+              onClick={() => trackWhatsAppClick('contact_page')}
+            >
               <MessageCircle size={18} /> WhatsApp Us
             </a>
           </aside>
         </div>
       </section>
-
-
     </>
   );
 }

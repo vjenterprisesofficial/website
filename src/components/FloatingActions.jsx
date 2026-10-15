@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowUp, MessageCircle } from 'lucide-react';
 import { company } from '../assets/siteData.js';
+import { trackWhatsAppClick } from '../utils/analytics.js';
 
 export default function FloatingActions() {
   const [visible, setVisible] = useState(false);
@@ -20,6 +21,7 @@ export default function FloatingActions() {
         target="_blank"
         rel="noreferrer"
         aria-label="Contact on WhatsApp"
+        onClick={() => trackWhatsAppClick('floating_button')}
       >
         <MessageCircle size={22} />
       </a>
