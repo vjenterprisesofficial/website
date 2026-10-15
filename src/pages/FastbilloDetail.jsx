@@ -72,10 +72,6 @@ export default function FastbilloDetail() {
       <section className="fastbillo-hero-section">
         <div className="container fastbillo-hero-grid">
           <div className="fastbillo-hero-content">
-            <div className="product-eyebrow-pill">
-              <span className="pill-dot" />
-              <span>OFFICIAL PRODUCT RELEASE &bull; ANDROID OS</span>
-            </div>
 
             <h1 className="fastbillo-hero-title">
               Meet FASTBILLO

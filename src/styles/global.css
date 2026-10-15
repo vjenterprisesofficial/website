@@ -89,7 +89,7 @@ main {
 }
 
 .container {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1240px, calc(100% - 32px));
   margin-inline: auto;
 }
 
@@ -151,48 +151,44 @@ main {
   min-height: var(--header-height);
   justify-content: space-between;
   gap: 16px;
+  flex-wrap: nowrap;
 }
 
 .brand {
+  display: flex;
+  align-items: center;
   gap: 12px;
   font-weight: 800;
-  line-height: 1.1;
-  font-size: 0.92rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand-text {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2px;
+  white-space: nowrap;
 }
 
 .brand-name {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  line-height: 1.1;
-}
-
-.brand-name span {
   font-weight: 900;
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   letter-spacing: 0.5px;
   color: var(--text);
   text-transform: uppercase;
-  max-width: 140px;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .brand-tagline {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.3px;
   text-transform: capitalize;
-  max-width: 140px;
+  white-space: nowrap;
   line-height: 1.2;
-}
-
-.brand span {
-  max-width: 190px;
 }
 
 .brand-logo {
@@ -1114,7 +1110,7 @@ h3 {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .menu-btn {
     display: inline-flex;
   }
@@ -1141,17 +1137,14 @@ h3 {
     pointer-events: auto;
   }
 
-  .brand-name span {
-    font-size: 0.65rem;
+  .brand-name {
+    font-size: 0.74rem;
+    white-space: nowrap;
   }
 
   .brand-tagline {
-    font-size: 0.55rem;
-  }
-
-  .brand span {
-    max-width: 150px;
-    font-size: 0.8rem;
+    font-size: 0.58rem;
+    white-space: nowrap;
   }
 }
 
