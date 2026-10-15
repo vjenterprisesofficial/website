@@ -49,8 +49,8 @@ export default function Navbar({ onGetProposalClick }) {
           />
           <div className="brand-text">
             <div className="brand-name">
-              <span>VJ ENTERPRISES</span>
-              <span>DIGITAL SOLUTIONS</span>
+              <span className="brand-name-top">VJ ENTERPRISES</span>
+              <span className="brand-name-bottom">DIGITAL SOLUTIONS</span>
             </div>
             <span className="brand-tagline">Grow Digitally, Grow Confidently</span>
           </div>
@@ -69,11 +69,11 @@ export default function Navbar({ onGetProposalClick }) {
                 >
                   <div className="nav-dropdown-trigger">
                     <NavLink 
-                      className={({ isActive }) => `nav-link nav-link-featured ${isActive ? 'active' : ''}`}
+                      className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                       to={link.to}
+                      onClick={() => setOpen(false)}
                     >
                       <span>{link.label}</span>
-                      {link.badge && <span className="nav-pill-badge">{link.badge}</span>}
                     </NavLink>
                     <button 
                       type="button" 
@@ -117,6 +117,7 @@ export default function Navbar({ onGetProposalClick }) {
                 key={link.to} 
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} 
                 to={link.to}
+                onClick={() => setOpen(false)}
               >
                 {link.label}
               </NavLink>
@@ -126,10 +127,13 @@ export default function Navbar({ onGetProposalClick }) {
           <button 
             type="button" 
             className="btn btn-small btn-primary nav-cta-btn" 
-            onClick={handleConsultationClick}
+            onClick={() => {
+              setOpen(false);
+              handleConsultationClick();
+            }}
           >
-            <Sparkles size={15} />
-            <span>Get a Free Consultation</span>
+            <Sparkles size={14} />
+            <span>Get Consultation</span>
           </button>
         </div>
 

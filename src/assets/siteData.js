@@ -42,15 +42,7 @@ export const navLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
-  { 
-    label: "Products", 
-    to: "/products",
-    badge: "New",
-    subLinks: [
-      { label: "All Products", to: "/products", description: "Explore all digital software" },
-      { label: "FASTBILLO", to: "/products/fastbillo", description: "Smart Billing & POS Platform" }
-    ]
-  },
+  { label: "Products", to: "/products" },
   { label: "Portfolio", to: "/portfolio" },
   { label: "Careers", to: "/careers" },
   { label: "Contact Us", to: "/contact" },
