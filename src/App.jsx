@@ -1,9 +1,8 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Services from './pages/Services.jsx';
-import Products from './pages/Products.jsx';
 import FastbilloDetail from './pages/FastbilloDetail.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Career from './pages/Career.jsx';
@@ -22,7 +21,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<Navigate to="/products/fastbillo" replace />} />
         <Route path="/products/fastbillo" element={<FastbilloDetail />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/careers" element={<Career />} />

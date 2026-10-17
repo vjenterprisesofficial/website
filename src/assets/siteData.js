@@ -42,7 +42,7 @@ export const navLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
-  { label: "Products", to: "/products" },
+  { label: "Products", to: "/products/fastbillo" },
   { label: "Portfolio", to: "/portfolio" },
   { label: "Careers", to: "/careers" },
   { label: "Contact Us", to: "/contact" },

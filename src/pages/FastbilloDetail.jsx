@@ -41,7 +41,7 @@ export default function FastbilloDetail() {
     return (
       <div className="container section">
         <h2>Product Not Found</h2>
-        <Link to="/products" className="btn btn-primary">Back to Products</Link>
+        <Link to="/" className="btn btn-primary">Back to Home</Link>
       </div>
     );
   }

@@ -179,8 +179,8 @@ export default function Home() {
                 Explore digital products developed to help businesses streamline everyday operations and work more efficiently.
               </p>
             </div>
-            <Link to="/products" className="btn btn-secondary btn-view-all-products">
-              <span>Explore All Products</span>
+            <Link to="/products/fastbillo" className="btn btn-secondary btn-view-all-products">
+              <span>Explore FASTBILLO</span>
               <ArrowRight size={16} />
             </Link>
           </div>
