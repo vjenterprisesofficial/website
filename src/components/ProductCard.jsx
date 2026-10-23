@@ -1,18 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Download, ArrowRight, Smartphone, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import { trackProductCtaClick, trackApkDownloadClick } from '../utils/analytics.js';
+import ApkNoticeModal from './ApkNoticeModal.jsx';
 
 export default function ProductCard({ product, showFullDetails = false }) {
   if (!product) return null;
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const hasDownload = Boolean(product.downloadUrl && product.downloadUrl.trim() !== "");
 
   const handleDownloadClick = (e) => {
     trackApkDownloadClick(product.id, product.version, hasDownload);
     if (!hasDownload) {
       e.preventDefault();
-      // Informative user feedback without broken link
-      alert(`${product.name} Android APK is currently in final rollout. You can request direct early access via WhatsApp or our Contact form!`);
+      setIsModalOpen(true);
     }
   };
 
@@ -21,7 +23,8 @@ export default function ProductCard({ product, showFullDetails = false }) {
   };
 
   return (
-    <article className="product-card reveal-card">
+    <>
+      <article className="product-card reveal-card">
       <div className="product-card-top">
         <div className="product-badge-row">
           <span className="product-category-tag">{product.category}</span>
@@ -114,5 +117,12 @@ export default function ProductCard({ product, showFullDetails = false }) {
         )}
       </div>
     </article>
+
+    <ApkNoticeModal 
+      isOpen={isModalOpen} 
+      onClose={() => setIsModalOpen(false)} 
+      productName={product.name} 
+    />
+  </>
   );
 }

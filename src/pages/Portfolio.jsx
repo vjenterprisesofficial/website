@@ -29,18 +29,32 @@ export default function Portfolio() {
         <div className="container">
           <SectionHeader eyebrow="Portfolio Gallery" title="Selected project directions" align="center" />
           <div className="filter-tabs" role="tablist" aria-label="Portfolio categories">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={activeCategory === category ? 'active' : ''}
-                type="button"
-                onClick={() => setActiveCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
+            {categories.map((category) => {
+              const isActive = activeCategory === category;
+              const tabId = `portfolio-tab-${category.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+              return (
+                <button
+                  key={category}
+                  id={tabId}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls="portfolio-grid"
+                  tabIndex={isActive ? 0 : -1}
+                  className={isActive ? 'active' : ''}
+                  type="button"
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category}
+                </button>
+              );
+            })}
           </div>
-          <div className="portfolio-grid">
+          <div 
+            id="portfolio-grid" 
+            role="tabpanel" 
+            aria-labelledby={`portfolio-tab-${activeCategory.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+            className="portfolio-grid"
+          >
             {filteredProjects.map((project) => <PortfolioCard key={project.title} project={project} />)}
           </div>
         </div>

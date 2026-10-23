@@ -5,7 +5,6 @@ import CTA from '../components/CTA.jsx';
 import FAQ from '../components/FAQ.jsx';
 import { services } from '../assets/siteData.js';
 
-const featuredNames = new Set(['Website Development', 'SEO Services', 'Digital Marketing', 'Social Media Marketing', 'Video Editing', 'Branding and Design']);
 
 export default function Services() {
   return (
@@ -42,7 +41,7 @@ export default function Services() {
             align="center"
           />
           <div className="card-grid">
-            {services.filter((service) => featuredNames.has(service.title)).map((service) => (
+            {services.map((service) => (
               <ServiceCard key={service.slug} service={service} />
             ))}
           </div>

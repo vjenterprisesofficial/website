@@ -21,9 +21,11 @@ import FastbilloMockup from '../components/FastbilloMockup.jsx';
 import CTA from '../components/CTA.jsx';
 import { products, getProductBySlug } from '../assets/productsData.js';
 import { trackProductView, trackProductCtaClick, trackApkDownloadClick } from '../utils/analytics.js';
+import ApkNoticeModal from '../components/ApkNoticeModal.jsx';
 
 export default function Products() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isApkModalOpen, setIsApkModalOpen] = useState(false);
   const fastbillo = getProductBySlug('fastbillo') || products[0];
 
   const filteredProducts = useMemo(() => {
@@ -43,7 +45,7 @@ export default function Products() {
     trackApkDownloadClick(fastbillo.id, fastbillo.version, hasFastbilloApk);
     if (!hasFastbilloApk) {
       e.preventDefault();
-      alert('FASTBILLO Android APK is currently in final rollout. You can request direct early access via WhatsApp or our Contact form!');
+      setIsApkModalOpen(true);
     }
   };
 
@@ -337,6 +339,12 @@ export default function Products() {
           </div>
         </div>
       </section>
+
+      <ApkNoticeModal
+        isOpen={isApkModalOpen}
+        onClose={() => setIsApkModalOpen(false)}
+        productName={fastbillo.name}
+      />
     </>
   );
 }

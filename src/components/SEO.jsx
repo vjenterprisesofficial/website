@@ -16,7 +16,8 @@ const setMeta = (selector, attributes) => {
 export default function SEO({ title, description, path = '/', image = '/vj-enterprises-logo.png', schema }) {
   useEffect(() => {
     const fullTitle = title.includes(company.name) ? title : `${title} | ${company.name}`;
-    const canonicalUrl = `${company.domain}${path === '/' ? '' : path}`;
+    const cleanPath = path === '/' ? '/' : (path.endsWith('/') ? path : `${path}/`);
+    const canonicalUrl = `${company.domain}${cleanPath}`;
     const imageUrl = image.startsWith('http') ? image : `${company.domain}${image}`;
 
     document.title = fullTitle;

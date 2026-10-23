@@ -96,7 +96,7 @@ export default function ApplyModal({ isOpen, onClose, jobData }) {
 
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-card" role="dialog" aria-modal="true">
+      <div className="modal-card" role="dialog" aria-modal="true" aria-labelledby="apply-modal-title">
         <button 
           type="button" 
           className="modal-close-btn" 
@@ -128,7 +128,7 @@ export default function ApplyModal({ isOpen, onClose, jobData }) {
           <>
             <div className="modal-header">
               <span className="eyebrow">Apply Now</span>
-              <h2>Join Our Team</h2>
+              <h2 id="apply-modal-title">Join Our Team</h2>
               <p>Please fill out the form below to submit your application.</p>
             </div>
 

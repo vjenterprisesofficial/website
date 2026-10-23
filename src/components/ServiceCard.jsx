@@ -14,7 +14,7 @@ export default function ServiceCard({ service }) {
           <li key={benefit}><Check size={16} />{benefit}</li>
         ))}
       </ul>
-      <Link className="text-link" to="/contact">
+      <Link className="text-link" to={`/contact?service=${encodeURIComponent(service.slug)}`}>
         {service.cta}<ArrowRight size={17} />
       </Link>
     </article>

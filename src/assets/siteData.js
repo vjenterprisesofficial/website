@@ -252,7 +252,7 @@ export const testimonials = [
   },
   {
     name: "R P Sharma",
-    role: "Presdient, Karate Bharat",
+    role: "President, Karate Bharat",
     rating: 5,
     quote:
       "The custom sports registry database and web portal developed by their team has streamlined our entire athlete registration process and tournament records. The system is extremely fast and robust.",
@@ -352,7 +352,7 @@ export const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/vjenterpri1" },
   { label: "Instagram", href: "https://www.instagram.com/vjenterpri1" },
   { label: "Facebook", href: "https://www.facebook.com/vjenterpri1" },
-  { label: "YouTube", href: "https://www.youtube.com/" },
+  { label: "YouTube", href: "https://www.youtube.com/@vjenterprisesofficial" },
 ];
 
 export const statCards = [

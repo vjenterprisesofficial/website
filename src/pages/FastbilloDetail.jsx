@@ -27,10 +27,12 @@ import FastbilloMockup from '../components/FastbilloMockup.jsx';
 import { getProductBySlug } from '../assets/productsData.js';
 import { company } from '../assets/siteData.js';
 import { trackProductView, trackApkDownloadClick, trackProductCtaClick, trackWhatsAppClick } from '../utils/analytics.js';
+import ApkNoticeModal from '../components/ApkNoticeModal.jsx';
 
 export default function FastbilloDetail() {
   const product = getProductBySlug('fastbillo');
   const [activeFeature, setActiveFeature] = useState('billing');
+  const [isApkModalOpen, setIsApkModalOpen] = useState(false);
 
   const featurePreviews = [
     { id: 'billing', label: 'Quick Billing', desc: 'Create a customer bill', icon: Receipt },
@@ -81,7 +83,7 @@ export default function FastbilloDetail() {
     trackApkDownloadClick(product.id, product.version, hasApk);
     if (!hasApk) {
       e.preventDefault();
-      alert('The FASTBILLO Android APK release is currently undergoing final staging. To receive the direct APK package or early access build immediately, please contact our team via WhatsApp or the contact form!');
+      setIsApkModalOpen(true);
     }
   };
 
@@ -486,6 +488,12 @@ export default function FastbilloDetail() {
           </div>
         </div>
       </section>
+
+      <ApkNoticeModal
+        isOpen={isApkModalOpen}
+        onClose={() => setIsApkModalOpen(false)}
+        productName={product.name}
+      />
     </>
   );
 }

@@ -89,7 +89,7 @@ export default function ProposalModal({ isOpen, onClose }) {
 
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-card" role="dialog" aria-modal="true">
+      <div className="modal-card" role="dialog" aria-modal="true" aria-labelledby="proposal-modal-title">
         <button
           type="button"
           className="modal-close-btn"
@@ -120,7 +120,7 @@ export default function ProposalModal({ isOpen, onClose }) {
           <>
             <div className="modal-header">
               <span className="eyebrow">Get Proposal</span>
-              <h2>Request a Project Proposal</h2>
+              <h2 id="proposal-modal-title">Request a Project Proposal</h2>
               <p>Tell us about your digital needs and project timeline.</p>
             </div>
 

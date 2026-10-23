@@ -14,7 +14,12 @@ export const organizationSchema = {
     addressRegion: 'Uttar Pradesh',
     addressCountry: 'India'
   },
-  sameAs: ['https://www.linkedin.com/', 'https://www.instagram.com/', 'https://www.facebook.com/'],
+  sameAs: [
+    'https://www.linkedin.com/company/vjenterpri1',
+    'https://www.instagram.com/vjenterpri1',
+    'https://www.facebook.com/vjenterpri1',
+    'https://www.youtube.com/@vjenterprisesofficial'
+  ],
   areaServed: ['India', 'Global'],
   serviceType: services.map((service) => service.title)
 };

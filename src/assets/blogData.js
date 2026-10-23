@@ -17,7 +17,7 @@ export const blogPosts = [
       },
       {
         type: "paragraph",
-        text: "When a standard storefront encounters technical bottlenecks, broken checkout funnels, or declining Core Web Vitals, it’s a sign your business has outgrew basic setups. You need an expert WordPress development agency to build a secure, high-performing digital asset engineered for maximum conversions."
+        text: "When a standard storefront encounters technical bottlenecks, broken checkout funnels, or declining Core Web Vitals, it’s a sign your business has outgrown basic setups. You need an expert WordPress development agency to build a secure, high-performing digital asset engineered for maximum conversions."
       },
       {
         type: "heading",

@@ -20,10 +20,9 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
 import '../styles/summer-internship.css';
+import { API_ENDPOINTS } from '../api/apiConfig.js';
 
-// Google Apps Script Web App URL for storing internship registrations in a Google Sheet
-// Change this URL if you want to store registrations in a different Google Sheet
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6XtyBYM08xGsGnOBTI_LeCglfngsL51-A0fJxc1myhdBe13Boo4y289d_MTQNShNS/exec';
+const GOOGLE_SCRIPT_URL = API_ENDPOINTS.internship;
 
 export default function SummerInternship() {
   const [activeTrackIndex, setActiveTrackIndex] = useState(0);
@@ -34,6 +33,25 @@ export default function SummerInternship() {
   const [modalLoading, setModalLoading] = useState(false);
   const [modalResponseMsg, setModalResponseMsg] = useState('');
   const [modalResponseType, setModalResponseType] = useState('');
+
+  // Close on Escape and lock body scroll
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        setIsModalOpen(false);
+      }
+    };
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isModalOpen]);
 
   const domains = [
     {
@@ -611,11 +629,21 @@ export default function SummerInternship() {
       {/* Modal Popup with Light Theme */}
       {isModalOpen && (
         <div className="internship-modal-overlay" onClick={() => setIsModalOpen(false)}>
-          <div className="internship-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="internship-modal-close" onClick={() => setIsModalOpen(false)}>
+          <div 
+            className="internship-modal-content" 
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="internship-modal-title"
+          >
+            <button 
+              className="internship-modal-close" 
+              onClick={() => setIsModalOpen(false)}
+              aria-label="Close registration dialog"
+            >
               <X size={20} />
             </button>
-            <h2 className="modal-title">Summer Internship Registration</h2>
+            <h2 id="internship-modal-title" className="modal-title">Summer Internship Registration</h2>
             <p className="modal-subtitle">
               Secure your workstation and lock the special ₹2,500 offer before slots fill up!
             </p>
