@@ -3498,6 +3498,112 @@ h3 {
 }
 
 /* ==========================================================================
+   FASTBILLO REAL APP SCREENSHOT STYLES
+   ========================================================================== */
+.device-speaker-slit {
+  width: 48px;
+  height: 4px;
+  background: #3a3229;
+  border-radius: 4px;
+  margin: 2px auto 8px;
+}
+
+.device-screen-app {
+  background: #ffffff;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) inset;
+}
+
+.device-screen-scroll-container {
+  width: 100%;
+  height: 560px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(228, 66, 45, 0.35) transparent;
+}
+
+.device-screen-scroll-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.device-screen-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(228, 66, 45, 0.35);
+  border-radius: 4px;
+}
+
+.fastbillo-app-screenshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  background: #ffffff;
+}
+
+.mockup-scroll-pill {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(23, 20, 18, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  transition: all 0.25s ease;
+  z-index: 5;
+}
+
+.mockup-scroll-pill:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.mockup-scroll-pill.pill-top {
+  bottom: auto;
+  top: 14px;
+  background: rgba(228, 66, 45, 0.92);
+}
+
+.bounce-arrow {
+  animation: bounceDown 1.8s ease-in-out infinite;
+}
+
+@keyframes bounceDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.device-home-pill {
+  width: 96px;
+  height: 4px;
+  background: #3a3229;
+  border-radius: 4px;
+  margin: 8px auto 2px;
+}
+
+/* ==========================================================================
    MODERN FORM STYLING
    ========================================================================== */
 .form-field-group {
@@ -3611,6 +3717,14 @@ h3 {
 
   .hero-card-floating {
     display: none;
+  }
+
+  .device-screen-scroll-container {
+    height: 480px;
+  }
+
+  .mockup-device-phone {
+    transform: none !important;
   }
 }
 

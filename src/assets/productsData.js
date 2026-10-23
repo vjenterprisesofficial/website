@@ -14,7 +14,7 @@ export const products = [
     shortDescription: "Smart billing and business management software designed to help businesses simplify billing and everyday operations.",
     description: "FASTBILLO is a business billing and POS platform designed to help business owners manage everyday business operations through a streamlined digital experience.",
     icon: "/products/fastbillo-icon.svg",
-    image: "/products/fastbillo-dashboard.svg",
+    image: "/products/fastbillo-app-screen.jpg",
     screenshots: [
       {
         id: "billing",
