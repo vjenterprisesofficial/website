@@ -1,9 +1,9 @@
 import SectionHeader from './SectionHeader.jsx';
 import { faqs } from '../assets/siteData.js';
 
-export default function FAQ() {
+export default function FAQ({ alt = false }) {
   return (
-    <section className="section faq-section">
+    <section className={`section ${alt ? 'alt' : ''} faq-section`}>
       <div className="container">
         <SectionHeader
           eyebrow="FAQ"

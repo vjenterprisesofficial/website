@@ -306,7 +306,7 @@ export default function Home() {
       <CTA />
 
       {/* Contact & Lead Generation Preview */}
-      <section className="section contact-preview">
+      <section className="section alt contact-preview">
         <div className="container two-column">
           <div>
             <p className="eyebrow">Let&rsquo;s Connect</p>

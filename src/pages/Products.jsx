@@ -104,7 +104,7 @@ export default function Products() {
       </section>
 
       {/* Product Discovery and Directory */}
-      <section id="products-directory" className="section alt">
+      <section id="products-directory" className="section">
         <div className="container">
           <div className="directory-header-row">
             <div>
@@ -156,7 +156,7 @@ export default function Products() {
       </section>
 
       {/* Featured Product In-Depth Section: FASTBILLO */}
-      <section className="section featured-product-spotlight">
+      <section className="section alt featured-product-spotlight">
         <div className="container">
           <div className="spotlight-two-column">
             <div className="spotlight-copy">
@@ -242,7 +242,7 @@ export default function Products() {
       </section>
 
       {/* Product Benefits Section */}
-      <section className="section alt">
+      <section className="section">
         <div className="container">
           <SectionHeader
             eyebrow="Business First Architecture"
@@ -296,7 +296,7 @@ export default function Products() {
       </section>
 
       {/* Product FAQs */}
-      <section className="section">
+      <section className="section alt">
         <div className="container narrow">
           <SectionHeader
             eyebrow="Questions & Answers"

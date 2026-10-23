@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Download, 
@@ -30,6 +30,35 @@ import { trackProductView, trackApkDownloadClick, trackProductCtaClick, trackWha
 
 export default function FastbilloDetail() {
   const product = getProductBySlug('fastbillo');
+  const [activeFeature, setActiveFeature] = useState('billing');
+
+  const featurePreviews = [
+    { id: 'billing', label: 'Quick Billing', desc: 'Create a customer bill', icon: Receipt },
+    { id: 'products', label: 'Products & Stock', desc: 'Manage your items', icon: Package },
+    { id: 'sales', label: 'Sales Overview', desc: 'Review daily sales', icon: TrendingUp }
+  ];
+
+  const handlePreviewKeyDown = (e, index) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      const nextIndex = (index + 1) % featurePreviews.length;
+      setActiveFeature(featurePreviews[nextIndex].id);
+      document.getElementById(`feature-tab-${featurePreviews[nextIndex].id}`)?.focus();
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prevIndex = (index - 1 + featurePreviews.length) % featurePreviews.length;
+      setActiveFeature(featurePreviews[prevIndex].id);
+      document.getElementById(`feature-tab-${featurePreviews[prevIndex].id}`)?.focus();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      setActiveFeature(featurePreviews[0].id);
+      document.getElementById(`feature-tab-${featurePreviews[0].id}`)?.focus();
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      setActiveFeature(featurePreviews[featurePreviews.length - 1].id);
+      document.getElementById(`feature-tab-${featurePreviews[featurePreviews.length - 1].id}`)?.focus();
+    }
+  };
 
   useEffect(() => {
     if (product) {
@@ -69,69 +98,111 @@ export default function FastbilloDetail() {
       />
 
       {/* Product Hero */}
-      <section className="fastbillo-hero-section">
+      <section className="fastbillo-hero-section" aria-labelledby="fastbillo-hero-title">
         <div className="container fastbillo-hero-grid">
           <div className="fastbillo-hero-content">
+            <div className="fastbillo-hero-eyebrow">
+              <span className="eyebrow-badge">
+                <span className="eyebrow-dot" aria-hidden="true" />
+                SIMPLE BUSINESS BILLING
+              </span>
+            </div>
 
-            <h1 className="fastbillo-hero-title">
+            <h1 id="fastbillo-hero-title" className="fastbillo-hero-title">
               Meet FASTBILLO
-              <span className="title-highlight">Smart Billing Platform</span>
+              <span className="title-highlight">Run your business. The easy way.</span>
             </h1>
 
-            <p className="fastbillo-hero-lead">
-              FASTBILLO is a business billing platform designed to help business owners manage everyday operations through a streamlined digital experience on Mobile devices.
+            <p className="fastbillo-hero-supporting">
+              Billing, products, and sales — all in one app.
             </p>
 
-           
+            <p className="fastbillo-hero-lead">
+              Create bills, manage your products, and keep track of daily sales from your phone. Spend less time managing paperwork and more time growing your business.
+            </p>
 
             <div className="fastbillo-hero-ctas">
               {hasApk ? (
                 <a
                   href={product.downloadUrl}
-                  className="btn btn-primary btn-large-download"
+                  className="btn btn-primary fastbillo-btn-primary btn-large-download"
                   download
                   onClick={handleDownloadClick}
                 >
-                  <Download size={20} />
-                  <span>Download Android APK</span>
+                  <Download size={20} aria-hidden="true" />
+                  <span>Download the App</span>
                 </a>
               ) : (
                 <button
                   type="button"
-                  className="btn btn-primary btn-large-download is-coming-soon"
+                  className="btn btn-primary fastbillo-btn-primary btn-large-download is-coming-soon"
                   onClick={handleDownloadClick}
+                  aria-label="Download the App"
                 >
-                  <Download size={20} />
-                  <span>Download APP</span>
+                  <Download size={20} aria-hidden="true" />
+                  <span>Download the App</span>
                 </button>
               )}
 
               <a 
                 href="#pricing" 
-                className="btn btn-secondary btn-large-consult"
+                className="btn btn-secondary fastbillo-btn-secondary btn-large-consult"
                 onClick={(e) => {
                   trackProductCtaClick('fastbillo', 'pricing');
                   const el = document.getElementById('pricing');
                   if (el) {
                     e.preventDefault();
                     el.scrollIntoView({ behavior: 'smooth' });
+                    el.focus({ preventScroll: true });
                   }
                 }}
               >
-                <span>Pricing</span>
-                <ArrowRight size={17} />
+                <span>View Pricing</span>
+                <ArrowRight size={17} aria-hidden="true" />
               </a>
+            </div>
+
+            {/* Accessible 3-Feature Preview Selector */}
+            <div className="fastbillo-feature-previews" role="region" aria-label="Interactive Feature Previews">
+              <span className="feature-previews-label">Explore in app:</span>
+              <div 
+                className="feature-preview-tabs" 
+                role="tablist" 
+                aria-label="FASTBILLO Feature Previews"
+              >
+                {featurePreviews.map((preview, index) => {
+                  const Icon = preview.icon;
+                  const isActive = activeFeature === preview.id;
+                  return (
+                    <button
+                      key={preview.id}
+                      id={`feature-tab-${preview.id}`}
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
+                      aria-controls="fastbillo-mockup-display"
+                      tabIndex={isActive ? 0 : -1}
+                      className={`feature-preview-tab ${isActive ? 'is-active' : ''}`}
+                      onClick={() => setActiveFeature(preview.id)}
+                      onKeyDown={(e) => handlePreviewKeyDown(e, index)}
+                    >
+                      <Icon size={15} aria-hidden="true" />
+                      <span>{preview.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
-          <div className="fastbillo-hero-mockup">
-            <FastbilloMockup activeTab="billing" interactive={true} />
+          <div className="fastbillo-hero-mockup" id="fastbillo-mockup-display">
+            <FastbilloMockup activeFeature={activeFeature} />
           </div>
         </div>
       </section>
 
       {/* Verified Product Capabilities Grid */}
-      <section className="section alt">
+      <section className="section">
         <div className="container">
           <SectionHeader
             eyebrow="Core Capabilities"
@@ -160,7 +231,7 @@ export default function FastbilloDetail() {
       </section>
 
       {/* How It Works Workflow */}
-      <section className="section">
+      <section className="section alt">
         <div className="container">
           <SectionHeader
             eyebrow="Workflow"
@@ -198,7 +269,7 @@ export default function FastbilloDetail() {
       </section>
 
       {/* Supported Business Use Cases */}
-      <section className="section alt">
+      <section className="section">
         <div className="container">
           <SectionHeader
             eyebrow="Multi-Industry Support"
@@ -365,7 +436,7 @@ export default function FastbilloDetail() {
       </section>
 
       {/* Product FAQs */}
-      <section className="section">
+      <section className="section alt">
         <div className="container narrow">
           <SectionHeader
             eyebrow="Product FAQs"
