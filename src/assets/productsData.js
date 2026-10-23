@@ -42,9 +42,6 @@ export const products = [
     // Configurable APK download URL.
     // If empty or file not available, the UI gracefully renders a disabled "Coming Soon" or notification state.
     downloadUrl: "", // Set to "/downloads/fastbillo.apk" when uploaded and ready
-    version: "1.0.4",
-    fileSize: "18.5 MB",
-    platform: ["Android 8.0+"],
     releaseDate: "2026",
     benefits: [
       {
@@ -110,6 +107,72 @@ export const products = [
       {
         title: "Wholesale & Distribution Counters",
         description: "Generate customer bills, manage credit limits, track outstanding balances, and export daily ledgers."
+      }
+    ],
+    pricing: [
+      {
+        id: "starter",
+        name: "Starter",
+        tagline: "For small shops, cafes & single-counter merchants",
+        duration: "Quarterly Plan",
+        price: "₹999",
+        originalPrice: "₹1,499",
+        period: "/ 3 Months",
+        featured: false,
+        features: [
+          "1 Mobile or Tablet Terminal",
+          "Fast POS Billing & Barcode Scanning",
+          "WhatsApp & SMS Digital Receipts",
+          "Up to 500 Product Catalog Items",
+          "Daily Sales & Day-End Cash Summary",
+          "Direct WhatsApp Support"
+        ],
+        ctaText: "Get Starter Plan",
+        ctaPlan: "Starter (₹999 / 3 Months)"
+      },
+      {
+        id: "annual",
+        name: "Professional",
+        tagline: "Most popular for growing retail & busy grocery stores",
+        duration: "Annual Plan",
+        price: "₹2,499",
+        originalPrice: "₹3,999",
+        period: "/ 1 Year",
+        badge: "Most Popular",
+        featured: true,
+        features: [
+          "Everything in Starter, plus:",
+          "Unlimited Invoices & Receipts",
+          "Unlimited Products & Item Barcodes",
+          "Live Inventory & Low Stock Alerts",
+          "Bluetooth Thermal Printer (58mm/80mm)",
+          "Customer Ledger & Credit (Udhar) Tracking",
+          "Priority WhatsApp Support & Free Updates"
+        ],
+        ctaText: "Choose Professional",
+        ctaPlan: "Professional (₹2,499 / Year)"
+      },
+      {
+        id: "lifetime",
+        name: "Lifetime License",
+        tagline: "One-time payment for permanent peace of mind",
+        duration: "One-Time Payment",
+        price: "₹5,999",
+        originalPrice: "₹8,999",
+        period: "Lifetime Validity",
+        badge: "Best Value",
+        featured: false,
+        features: [
+          "One-time payment, no recurring fees",
+          "All Professional Plan Features",
+          "Multi-Counter & Multi-Device Access",
+          "Custom Invoice Branding (Store Logo & GST)",
+          "Cloud Data Backup & Instant Restore",
+          "VIP Onboarding & Dedicated Support",
+          "All Future Feature Updates Included"
+        ],
+        ctaText: "Get Lifetime License",
+        ctaPlan: "Lifetime License (₹5,999)"
       }
     ],
     faqs: [

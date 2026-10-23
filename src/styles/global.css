@@ -2969,6 +2969,230 @@ h3 {
   line-height: 1.5;
 }
 
+/* ==========================================================================
+   FASTBILLO PRICING SECTION STYLES
+   ========================================================================== */
+.fastbillo-pricing-section {
+  position: relative;
+  scroll-margin-top: 80px;
+}
+
+.fastbillo-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 40px;
+}
+
+.fastbillo-pricing-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.fastbillo-pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -15px rgba(228, 66, 45, 0.15);
+  border-color: rgba(228, 66, 45, 0.3);
+}
+
+.fastbillo-pricing-card.is-featured {
+  border: 2px solid var(--accent);
+  background: linear-gradient(180deg, rgba(228, 66, 45, 0.03) 0%, var(--surface) 100%);
+  box-shadow: 0 24px 50px -12px rgba(228, 66, 45, 0.22);
+  transform: scale(1.03);
+}
+
+.fastbillo-pricing-card.is-featured:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 30px 60px -15px rgba(228, 66, 45, 0.3);
+}
+
+.fastbillo-pricing-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient, linear-gradient(135deg, #e4422d, #ff6b4a));
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(228, 66, 45, 0.35);
+  white-space: nowrap;
+}
+
+.fastbillo-pricing-header {
+  margin-bottom: 20px;
+}
+
+.fastbillo-pricing-duration {
+  display: inline-block;
+  background: rgba(228, 66, 45, 0.08);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 750;
+  margin-bottom: 12px;
+}
+
+.fastbillo-pricing-header h3 {
+  font-size: 1.45rem;
+  font-weight: 850;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.fastbillo-pricing-tagline {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0;
+  min-height: 38px;
+}
+
+.fastbillo-pricing-price-box {
+  padding: 18px 0;
+  border-top: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+  margin-bottom: 24px;
+}
+
+.fastbillo-pricing-del {
+  font-size: 1rem;
+  color: var(--muted);
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 2px;
+  opacity: 0.75;
+}
+
+.fastbillo-pricing-amount-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.fastbillo-pricing-price {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.fastbillo-pricing-period {
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--muted);
+}
+
+.fastbillo-pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex: 1;
+}
+
+.fastbillo-pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.fastbillo-pricing-features .feature-check-icon {
+  color: #16a34a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fastbillo-pricing-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.fastbillo-whatsapp-quick-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #15803d;
+  text-decoration: none;
+  padding: 6px;
+  transition: color 0.2s ease;
+}
+
+.fastbillo-whatsapp-quick-link:hover {
+  color: #16a34a;
+  text-decoration: underline;
+}
+
+.fastbillo-pricing-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 680px;
+  margin: 40px auto 0;
+  padding: 18px 24px;
+  background: rgba(22, 163, 74, 0.06);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  border-radius: var(--radius);
+}
+
+.fastbillo-pricing-guarantee .guarantee-icon {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.fastbillo-pricing-guarantee strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.fastbillo-pricing-guarantee p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 960px) {
+  .fastbillo-pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 40px auto 0;
+  }
+  .fastbillo-pricing-card.is-featured {
+    transform: none;
+  }
+  .fastbillo-pricing-card.is-featured:hover {
+    transform: translateY(-6px);
+  }
+}
+
 /* Android Installation Section */
 .installation-section {
   padding: 60px 0;

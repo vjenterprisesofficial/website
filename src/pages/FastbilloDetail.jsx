@@ -75,24 +75,14 @@ export default function FastbilloDetail() {
 
             <h1 className="fastbillo-hero-title">
               Meet FASTBILLO
-              <span className="title-highlight">Smart Billing &amp; POS Platform</span>
+              <span className="title-highlight">Smart Billing Platform</span>
             </h1>
 
             <p className="fastbillo-hero-lead">
-              FASTBILLO is a business billing and POS platform designed to help business owners manage everyday operations through a streamlined digital experience on Android devices.
+              FASTBILLO is a business billing platform designed to help business owners manage everyday operations through a streamlined digital experience on Mobile devices.
             </p>
 
-            <div className="hero-spec-pills">
-              <span className="spec-pill">
-                <strong>Platform:</strong> Android 8.0+
-              </span>
-              <span className="spec-pill">
-                <strong>Version:</strong> {product.version || '1.0'}
-              </span>
-              <span className="spec-pill">
-                <strong>Size:</strong> {product.fileSize || '18.5 MB'}
-              </span>
-            </div>
+           
 
             <div className="fastbillo-hero-ctas">
               {hasApk ? (
@@ -112,22 +102,25 @@ export default function FastbilloDetail() {
                   onClick={handleDownloadClick}
                 >
                   <Download size={20} />
-                  <span>Download APK &bull; In Final Rollout</span>
+                  <span>Download APP</span>
                 </button>
               )}
 
-              <Link 
-                to="/contact?product=fastbillo" 
+              <a 
+                href="#pricing" 
                 className="btn btn-secondary btn-large-consult"
-                onClick={() => trackProductCtaClick('fastbillo', 'consultation')}
+                onClick={(e) => {
+                  trackProductCtaClick('fastbillo', 'pricing');
+                  const el = document.getElementById('pricing');
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
-                <span>Request Live Demo</span>
+                <span>Pricing</span>
                 <ArrowRight size={17} />
-              </Link>
-            </div>
-
-            <div className="apk-disclaimer-note">
-              <span>Verified Android APK direct distribution. Safe, lightweight, and pre-tested for retail hardware.</span>
+              </a>
             </div>
           </div>
 
@@ -229,6 +222,86 @@ export default function FastbilloDetail() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Transparent Pricing Section */}
+      <section id="pricing" className="section alt fastbillo-pricing-section">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Pricing Plans"
+            title="Simple, Transparent &amp; Affordable Plans"
+            description="Equip your retail counter with FASTBILLO. Choose the plan that best fits your business volume with no hidden charges."
+            align="center"
+          />
+
+          <div className="fastbillo-pricing-grid">
+            {product.pricing?.map((plan) => (
+              <div 
+                key={plan.id} 
+                className={`fastbillo-pricing-card ${plan.featured ? 'is-featured' : ''}`}
+              >
+                {plan.badge && (
+                  <span className="fastbillo-pricing-badge">{plan.badge}</span>
+                )}
+
+                <div className="fastbillo-pricing-header">
+                  <span className="fastbillo-pricing-duration">{plan.duration}</span>
+                  <h3>{plan.name}</h3>
+                  <p className="fastbillo-pricing-tagline">{plan.tagline}</p>
+                </div>
+
+                <div className="fastbillo-pricing-price-box">
+                  {plan.originalPrice && (
+                    <span className="fastbillo-pricing-del">{plan.originalPrice}</span>
+                  )}
+                  <div className="fastbillo-pricing-amount-row">
+                    <span className="fastbillo-pricing-price">{plan.price}</span>
+                    <span className="fastbillo-pricing-period">{plan.period}</span>
+                  </div>
+                </div>
+
+                <ul className="fastbillo-pricing-features">
+                  {plan.features.map((feature, fIdx) => (
+                    <li key={fIdx}>
+                      <CheckCircle2 size={16} className="feature-check-icon" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="fastbillo-pricing-cta-wrap">
+                  <Link
+                    to={`/contact?product=fastbillo&plan=${encodeURIComponent(plan.ctaPlan)}`}
+                    className={`btn ${plan.featured ? 'btn-primary' : 'btn-secondary'} full`}
+                    onClick={() => trackProductCtaClick('fastbillo', `pricing_${plan.id}`)}
+                  >
+                    <span>{plan.ctaText}</span>
+                    <ArrowRight size={16} />
+                  </Link>
+
+                  <a
+                    href={`https://wa.me/${company.whatsapp}?text=Hi%20VJ%20Enterprises%2C%20I%20am%20interested%20in%20the%20FASTBILLO%20${encodeURIComponent(plan.name)}%20plan.`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="fastbillo-whatsapp-quick-link"
+                    onClick={() => trackWhatsAppClick(`pricing_${plan.id}`)}
+                  >
+                    <MessageCircle size={14} />
+                    <span>Or quick chat on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="fastbillo-pricing-guarantee">
+            <ShieldCheck size={22} className="guarantee-icon" />
+            <div>
+              <strong>Instant Setup &amp; Dedicated WhatsApp Support</strong>
+              <p>Every license includes full onboarding assistance, receipt printer configuration, and direct technical support from VJ Enterprises Digital Solutions.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -12,11 +12,17 @@ export default function ContactForm({ compact = false, preselectedInterest = '' 
   const [responseMessage, setResponseMessage] = useState('');
   const [responseType, setResponseType] = useState('');
   const [selectedService, setSelectedService] = useState('');
+  const [messageText, setMessageText] = useState('');
 
   useEffect(() => {
     // Check if query param specifies product or service
     const productParam = searchParams.get('product');
     const serviceParam = searchParams.get('service');
+    const planParam = searchParams.get('plan');
+
+    if (planParam) {
+      setMessageText(`Hello, I would like to get started with FASTBILLO on the ${planParam} plan. Please contact me with onboarding details.`);
+    }
 
     if (preselectedInterest) {
       setSelectedService(preselectedInterest);
@@ -161,6 +167,8 @@ export default function ContactForm({ compact = false, preselectedInterest = '' 
           name="message"
           rows={compact ? 4 : 5}
           placeholder="Tell us about your business goals, required features, timeline, or current challenges."
+          value={messageText}
+          onChange={(e) => setMessageText(e.target.value)}
           required
         />
       </div>
