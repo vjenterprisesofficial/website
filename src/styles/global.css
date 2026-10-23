@@ -840,8 +840,9 @@ h3 {
 }
 
 .contact-form label {
-  display: grid;
-  gap: 7px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
   color: var(--muted);
   font-weight: 700;
 }
@@ -3506,6 +3507,9 @@ h3 {
 }
 
 .form-field-group label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
   font-weight: 750;
   font-size: 0.88rem;
   color: var(--text);
