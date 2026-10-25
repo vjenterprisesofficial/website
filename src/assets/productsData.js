@@ -39,6 +39,8 @@ export const products = [
     statusLabel: "Available on Android",
     featured: true,
     detailPath: "/products/fastbillo",
+    // Configurable Google Play Store URL
+    googlePlayUrl: "", // Set to your Google Play Store URL when live
     // Configurable APK download URL.
     // If empty or file not available, the UI gracefully renders a disabled "Coming Soon" or notification state.
     downloadUrl: "", // Set to "/downloads/fastbillo.apk" when uploaded and ready

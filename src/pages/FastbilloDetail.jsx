@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Download, 
   CheckCircle2, 
   Smartphone, 
   Receipt, 
@@ -26,7 +25,7 @@ import SectionHeader from '../components/SectionHeader.jsx';
 import FastbilloMockup from '../components/FastbilloMockup.jsx';
 import { getProductBySlug } from '../assets/productsData.js';
 import { company } from '../assets/siteData.js';
-import { trackProductView, trackApkDownloadClick, trackProductCtaClick, trackWhatsAppClick } from '../utils/analytics.js';
+import { trackProductView, trackProductCtaClick, trackWhatsAppClick } from '../utils/analytics.js';
 
 export default function FastbilloDetail() {
   const product = getProductBySlug('fastbillo');
@@ -75,13 +74,11 @@ export default function FastbilloDetail() {
     );
   }
 
-  const hasApk = Boolean(product.downloadUrl && product.downloadUrl.trim() !== "");
-
-  const handleDownloadClick = (e) => {
-    trackApkDownloadClick(product.id, product.version, hasApk);
-    if (!hasApk) {
+  const handleGooglePlayClick = (e) => {
+    trackProductCtaClick(product.id, 'google_play');
+    if (!product.googlePlayUrl || product.googlePlayUrl.trim() === '') {
       e.preventDefault();
-      alert('The FASTBILLO Android APK release is currently undergoing final staging. To receive the direct APK package or early access build immediately, please contact our team via WhatsApp or the contact form!');
+      alert('FASTBILLO will be available on the Google Play Store soon! To get early access or a live demo, contact our team on WhatsApp or via our contact form.');
     }
   };
 
@@ -122,27 +119,31 @@ export default function FastbilloDetail() {
             </p>
 
             <div className="fastbillo-hero-ctas">
-              {hasApk ? (
-                <a
-                  href={product.downloadUrl}
-                  className="btn btn-primary fastbillo-btn-primary btn-large-download"
-                  download
-                  onClick={handleDownloadClick}
+              <a
+                href={product.googlePlayUrl || "#"}
+                className="btn-google-play"
+                target={product.googlePlayUrl ? "_blank" : undefined}
+                rel={product.googlePlayUrl ? "noopener noreferrer" : undefined}
+                onClick={handleGooglePlayClick}
+                aria-label="Get FASTBILLO on Google Play"
+              >
+                <svg
+                  className="google-play-badge-icon"
+                  viewBox="0 0 466 512"
+                  width="22"
+                  height="24"
+                  aria-hidden="true"
                 >
-                  <Download size={20} aria-hidden="true" />
-                  <span>Download the App</span>
-                </a>
-              ) : (
-                <button
-                  type="button"
-                  className="btn btn-primary fastbillo-btn-primary btn-large-download is-coming-soon"
-                  onClick={handleDownloadClick}
-                  aria-label="Download the App"
-                >
-                  <Download size={20} aria-hidden="true" />
-                  <span>Download the App</span>
-                </button>
-              )}
+                  <path fill="#EA4335" d="M199.9 237.8 1.4 470.17c7.22 24.57 30.16 41.81 55.8 41.81 11.16 0 20.93-2.79 29.3-8.37l244.16-139.46L199.9 237.8z"/>
+                  <path fill="#FBBC04" d="m433.91 205.1-104.65-60-111.61 110.22 113.01 108.83 104.64-58.6c18.14-9.77 30.7-29.3 30.7-50.23-1.4-20.93-13.95-40.46-32.09-50.22z"/>
+                  <path fill="#34A853" d="M199.42 273.45 329.27 145.1 87.9 8.37C79.53 2.79 68.36 0 57.2 0 30.7 0 6.98 18.14 1.4 41.86l198.02 231.59z"/>
+                  <path fill="#4285F4" d="M1.39 41.86C0 46.04 0 51.63 0 57.2v397.64c0 5.57 0 9.76 1.4 15.34l216.27-214.86L1.39 41.86z"/>
+                </svg>
+                <div className="google-play-badge-text">
+                  <span className="google-play-badge-sub">GET IT ON</span>
+                  <span className="google-play-badge-main">Google Play</span>
+                </div>
+              </a>
 
               <a 
                 href="#pricing" 
@@ -393,8 +394,8 @@ export default function FastbilloDetail() {
               <div className="install-step">
                 <span className="step-index">1</span>
                 <div>
-                  <strong>Download the APK file</strong>
-                  <p>Tap the &ldquo;Download Android APK&rdquo; button above on your smartphone or tablet browser.</p>
+                  <strong>Get the App or APK file</strong>
+                  <p>Install directly from Google Play or download the verified package directly to your smartphone or tablet browser.</p>
                 </div>
               </div>
 
