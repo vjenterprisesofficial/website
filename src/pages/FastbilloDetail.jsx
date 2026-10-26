@@ -26,6 +26,7 @@ import FastbilloMockup from '../components/FastbilloMockup.jsx';
 import { getProductBySlug } from '../assets/productsData.js';
 import { company } from '../assets/siteData.js';
 import { trackProductView, trackProductCtaClick, trackWhatsAppClick } from '../utils/analytics.js';
+import CoreCapabilities from '../components/CoreCapabilities.jsx';
 
 export default function FastbilloDetail() {
   const product = getProductBySlug('fastbillo');
@@ -202,34 +203,8 @@ export default function FastbilloDetail() {
         </div>
       </section>
 
-      {/* Verified Product Capabilities Grid */}
-      <section className="section">
-        <div className="container">
-          <SectionHeader
-            eyebrow="Core Capabilities"
-            title="Essential Business Tools Built Into One Interface"
-            description="Verified platform capabilities engineered specifically for shop counters, store managers, and retail operators."
-            align="center"
-          />
-
-          <div className="fastbillo-features-grid">
-            {product.features.map((feat, idx) => (
-              <article key={idx} className="fastbillo-feature-card">
-                <div className="feature-icon-badge">
-                  {idx === 0 && <Receipt size={22} />}
-                  {idx === 1 && <Printer size={22} />}
-                  {idx === 2 && <Package size={22} />}
-                  {idx === 3 && <Store size={22} />}
-                  {idx === 4 && <TrendingUp size={22} />}
-                  {idx === 5 && <Layers size={22} />}
-                </div>
-                <h3>{feat.title}</h3>
-                <p>{feat.detail}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Interactive Core Capabilities Feature Explorer */}
+      <CoreCapabilities />
 
       {/* How It Works Workflow */}
       <section className="section alt">
